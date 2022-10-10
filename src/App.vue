@@ -14,10 +14,10 @@
       <nav :class="['navbar']">
         <ul>
           <li>
-            <a href="/" title="Accueil" alt="Accueil">Accueil</a>
+            <a href="/" title="Accueil" alt="Accueil">accueil</a>
           </li>
           <li>
-            <MyButton title="🌓" background="transparent" rounded=true :onClick="toggleTheme"/>
+            <MyButton title="dark mode" background="transparent" rounded=true :onClick="toggleTheme"/>
           </li>
         </ul>
       </nav>

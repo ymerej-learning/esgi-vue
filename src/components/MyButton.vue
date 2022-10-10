@@ -36,10 +36,11 @@
     <button
         v-bind:style="{
             backgroundColor: background,
-            border: 'none',
+            border: '2px solid ' + color,
             borderRadius: rounded ? '0.5rem' : '0',
             color: color,
             cursor: 'pointer',
+            fontWeight: 'bold'
         }"
         v-on:click="handleClick($event)"
     >
