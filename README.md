@@ -2,6 +2,21 @@
 
 This template should help get you started developing with Vue 3 in Vite.
 
+## Notes
+```
+v-bind:style = :style
+```
+```
+v-on:click = @click
+```
+Si calcul dans les templates utilisé 
+```
+computed()
+```
+State dans Vue
+```
+reactive ou ref
+```
 ## Recommended IDE Setup
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).

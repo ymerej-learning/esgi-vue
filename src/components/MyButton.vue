@@ -26,10 +26,8 @@
         },
     });
 
-    function handleClick(event) {
-        console.info(event);
-        props.onClick();
-}
+    function handleClick() {
+    }
 </script>
 
 <template>
@@ -42,7 +40,7 @@
             cursor: 'pointer',
             fontWeight: 'bold'
         }"
-        v-on:click="handleClick($event)"
+        v-on:click="handleClick"
     >
         {{ title }}
     </button>
