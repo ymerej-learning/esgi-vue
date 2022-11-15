@@ -12,15 +12,15 @@
 
   const object = {
     first: {
-      name: "dafgsdfghen",
+      name: "first",
       completed: false,
     },
     second: {
-      name: "hfjhkljfdgf",
+      name: "second",
       completed: false,
     },
     third: {
-      name: "rdsgnki",
+      name: "third",
       completed: true,
     },
   };
@@ -30,22 +30,24 @@
   <div v-bind:class="['wrapper', { 'dark': isDark }]">
       <nav v-bind:class="['navbar']">
         <ul>
-          <li>
-            <a href="/" title="Accueil" alt="Accueil">accueil</a>
-          </li>
-          <li>
-            <MyButton v-if="isDark" title="white mode" background="transparent" v-bind:rounded="true" v-bind:onClick="toggleTheme"/>
-            <MyButton v-else title="dark mode" background="transparent" v-bind:rounded="true" v-bind:onClick="toggleTheme"/>
-          </li>
           <li v-show="isDark">
             😎
           </li>
           <li v-show="!isDark">
             😳
           </li>
+          <li>
+            <a href="/" title="Accueil" alt="Accueil">Home</a>
+          </li>
+          <li>
+            <MyButton v-if="isDark" title="white mode" background="transparent" v-bind:rounded="true" v-on:click="toggleTheme"/>
+            <MyButton v-else title="dark mode" background="transparent" v-bind:rounded="true" v-on:click="toggleTheme"/>
+          </li>
         </ul>
       </nav>
       <main>
+        <!-- TODO: sort by task completed -->
+        List of tasks :
         <template v-for="(todo, key, index) in object" :key="key">
         <TodoList
           v-bind:name="todo.name"
@@ -59,6 +61,10 @@
 <style scoped>
   main button {
     display: block;
+  }
+  main {
+    margin: 2rem;
+    color: white;
   }
   .wrapper {
     width: 100vw;
@@ -75,6 +81,9 @@
   }
   .navbar li {
     margin: 1rem;
+  }
+  .navbar li:nth-child(3) {
+    padding-right: 10rem;
   }
   .navbar a {
     text-decoration: none;

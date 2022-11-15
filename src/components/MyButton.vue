@@ -20,31 +20,26 @@
                 return ["black"].includes[value];
             },
         },
-        onClick: {
-            type: Function,
-            required: true,
-        },
     });
-
-    function handleClick() {
-    }
 </script>
 
 <template>
     <button
+        v-bind:class="['button']"
         v-bind:style="{
             backgroundColor: background,
             border: '2px solid ' + color,
             borderRadius: rounded ? '0.5rem' : '0',
             color: color,
-            cursor: 'pointer',
-            fontWeight: 'bold'
         }"
-        v-on:click="handleClick"
     >
         {{ title }}
     </button>
 </template>
 
 <style scoped>
+    .button {
+        cursor: pointer;
+        font-weight: bold;
+    }
 </style>

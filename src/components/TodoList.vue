@@ -1,11 +1,3 @@
-<!--
-    Gestion de liste de tâches
-    (pensez à la séparation des responsabilités)
-    Part 1
-        - Lister les tâches
-        - Pouvoir filter ou pas les tâches terminées
--->
-
 <script setup>
     const props = defineProps({
         name: {
@@ -17,25 +9,15 @@
             default: false,
         },
     });
-
-    function handleClick() {
-        console.log("hello")
-}
 </script>
 
 <template>
     <button
+        v-bind:class="['task']"
         v-bind:style="{
-            backgroundColor: completed ? 'darkgrey' : 'grey',
-            color: 'white',
-            padding: '1rem',
-            border: 'none',
-            margin: '0.5rem',
-            borderRadius: '1rem',
-            fontWeight: 'bold',
-            cursor: 'pointer'
+            backgroundColor: completed ? 'darkgreen' : 'darkred',
         }"
-        v-on:click="handleClick"
+        v-on:click="completed = !completed"
     >
         <span v-if="completed">✔</span>
         <span v-else>✖</span>
@@ -44,4 +26,13 @@
 </template>
 
 <style scoped>
+    .task {
+        color: white;
+        padding: 1rem;
+        border: none;
+        margin: 0.5rem;
+        border-radius: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
 </style>
