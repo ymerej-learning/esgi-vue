@@ -27,7 +27,7 @@
 </script>
 
 <template>
-  <div v-bind:class="['wrapper', { 'dark': isDark }]">
+  <div v-bind:class="[isDark ? 'wrapper dark' : 'wrapper white']">
       <nav v-bind:class="['navbar']">
         <ul>
           <li v-show="isDark">
@@ -64,7 +64,6 @@
   }
   main {
     margin: 2rem;
-    color: white;
   }
   .wrapper {
     width: 100vw;
@@ -87,9 +86,13 @@
   }
   .navbar a {
     text-decoration: none;
-    color: black;
   }
   .dark {
     background-color: black;
+    color: white;
+  }
+  .white {
+    background-color: white;
+    color: black;
   }
 </style>
